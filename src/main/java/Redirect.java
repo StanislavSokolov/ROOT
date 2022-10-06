@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -14,11 +15,11 @@ public class Redirect extends HttpServlet {
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
         httpServletRequest.setCharacterEncoding("UTF-8");
         httpServletResponse.setContentType("text/html");
-        String path = "/test.jsp";
-        ServletContext servletContext = getServletContext();
-        RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(path);
-        requestDispatcher.forward(httpServletRequest, httpServletResponse);
-//        httpServletRequest.getRequestDispatcher("mebelcity.jsp").forward();
+        String request = String.valueOf(httpServletRequest.getRequestURL());
+        if (request.equals("http://www.falconfamily.shop/")) {
+            String path = httpServletRequest.getContextPath() + "/MebelCity";
+            httpServletResponse.sendRedirect(path);
+        }
     }
 
     @Override
