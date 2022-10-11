@@ -19,9 +19,9 @@ public class Redirect extends HttpServlet {
         if (request.equals("http://www.falconfamily.shop/")) {
             String path = httpServletRequest.getContextPath() + "/MebelCity";
             httpServletResponse.sendRedirect(path);
-        } else if (request.equals("http://www.tapasandpintxos.ru/")) {
-            String path = httpServletRequest.getContextPath() + "/docs";
-            httpServletResponse.sendRedirect(path);
+//        } else if (request.equals("http://www.tapasandpintxos.ru/")) {
+//            String path = httpServletRequest.getContextPath() + "/docs";
+//            httpServletResponse.sendRedirect(path);
         }
     }
 
