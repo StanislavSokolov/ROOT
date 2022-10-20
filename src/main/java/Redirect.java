@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/")
 public class Redirect extends HttpServlet {
     private final String DOMEN_1 = "falconfamily.shop";
+    private final String PORT_1 = "8448";
     private final String DOMEN_2 = "tapasandpintxos.ru";
-    private final String PORT = "8448";
+    private final String PORT_2 = "8449";
     @Override
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
         httpServletRequest.setCharacterEncoding("UTF-8");
@@ -23,16 +24,16 @@ public class Redirect extends HttpServlet {
                 request.equals("http://" + DOMEN_1 + "/") ||
                 request.equals("https://www." + DOMEN_1 + "/") ||
                 request.equals("https://" + DOMEN_1 + "/") ||
-                request.equals("https://www." + DOMEN_1 + ":" + PORT + "/") ||
-                request.equals("https://" + DOMEN_1 + ":" + PORT + "/")) {
+                request.equals("https://www." + DOMEN_1 + ":" + PORT_1 + "/") ||
+                request.equals("https://" + DOMEN_1 + ":" + PORT_1 + "/")) {
 //            String path = httpServletRequest.getContextPath() + "/MebelCity";
             httpServletResponse.sendRedirect("https://www." + DOMEN_1 + "/MebelCity");
         } else if (request.equals("http://www." + DOMEN_2 + "/") ||
                 request.equals("http://" + DOMEN_2 + "/") ||
                 request.equals("https://www." + DOMEN_2 + "/") ||
                 request.equals("https://" + DOMEN_2 + "/") ||
-                request.equals("https://www." + DOMEN_2 + ":" + PORT + "/") ||
-                request.equals("https://" + DOMEN_2 + ":" + PORT + "/")) {
+                request.equals("https://www." + DOMEN_2 + ":" + PORT_2 + "/") ||
+                request.equals("https://" + DOMEN_2 + ":" + PORT_2 + "/")) {
 //            String path = httpServletRequest.getContextPath() + "/docs";
 //            httpServletResponse.sendRedirect(path);
             httpServletResponse.sendRedirect("https://www." + DOMEN_2 + "/docs");
